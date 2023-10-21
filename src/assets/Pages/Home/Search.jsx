@@ -17,13 +17,13 @@ const Search = () => {
                 value={name}
                 placeholder='Search by name'
                 onChange={(e) => setName(e.target.value)}
-                className='rounded-l-full p-2 pl-3 '
+                className='p-1 rounded-l-full sm:p-2 sm:pl-3 '
             />
             <select
                 id="category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className='rounded-l-none p-2 text-slate-500'
+                className='hidden p-1 rounded-l-none sm:p-2 text-slate-500 sm:block'
             >
                 <option value="">Category</option>
                 <option value="category1">Category 1</option>
@@ -31,7 +31,7 @@ const Search = () => {
                 <option value="category3">Category 3</option>
             </select>
 
-            <button className='bg-cyan-500 px-5 rounded-r-full p-2' onClick={handleSearch}>
+            <button className='p-1 rounded-r-full sm:p-2 sm:px-5 bg-cyan-500' onClick={handleSearch}>
                 Search
             </button>
         </div>

@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <div className=''>
-            <div className="w-full mx-auto bg-white navbar max-w-7xl font-julius">
+            <div className="w-full mx-auto shadow-lg bg-slate-100 navbar max-w-7xl font-julius">
 
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -68,14 +68,14 @@ const Navbar = () => {
 
                             <Link to="/">
 
-                                <button onClick={handleLogOut} className="bg-[#f83f79] px-3 py-2 rounded-lg ">Log out</button>
+                                <button onClick={handleLogOut} className="px-3 py-2 font-semibold text-white rounded-full bg-cyan-500">Log out</button>
 
                             </Link>
                         </div>
                         :
                         <Link to="/login">
 
-                            <button className="bg-[#26969c] px-3 py-2 rounded-lg text-white">Login</button>
+                            <button className="px-3 py-2 font-semibold text-white rounded-full bg-cyan-500">Login</button>
 
                         </Link>}
                 </div>
