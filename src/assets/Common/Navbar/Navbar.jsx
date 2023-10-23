@@ -62,7 +62,13 @@ const Navbar = () => {
 
                             <label tabIndex={0} className=" avatar">
                                 <div className="w-10 rounded-full ">
-                                    <img src={user.photoURL} className="w-10 h-10 rounded-full" alt="" data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} />
+                                    <img
+                                        src={user.photoURL || 'https://i.ibb.co/Qv83f2q/3177440.png'}
+                                        className="w-10 h-10 rounded-full"
+                                        alt=""
+                                        data-tooltip-id="my-tooltip"
+                                        data-tooltip-content={user?.displayName}
+                                    />
                                 </div>
                             </label>
 
