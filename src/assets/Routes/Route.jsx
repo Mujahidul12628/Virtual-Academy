@@ -37,10 +37,7 @@ const router = createBrowserRouter([
                 path: "register",
                 element: <Register></Register>
             },
-            {
-                path: "/dashboard",
-                element: <PrivateRoute><Dashboard></Dashboard> </PrivateRoute>,
-            },
+
             {
                 path: "/class",
                 element: <PrivateRoute> <Class></Class> </PrivateRoute>
@@ -80,6 +77,10 @@ const router = createBrowserRouter([
             //     loader: ({ params }) => fetch(`https://action-avenue-server.vercel.app/toy/${params.id}`)
             // }
         ]
+    },
+    {
+        path: "/dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard> </PrivateRoute>,
     },
     {
         path: '*',
