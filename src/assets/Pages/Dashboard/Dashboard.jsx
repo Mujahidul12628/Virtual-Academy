@@ -1,123 +1,184 @@
-import React, { useState, useEffect } from 'react';
+
+
+import React, { useContext, useState } from 'react';
+import { CgClipboard } from "react-icons/cg";
+import { BiMessageSquareAdd } from "react-icons/bi";
+import {
+    BsPeople, BsCalendar, BsCheckAll, BsPlusCircle, BsGear, BsPerson, BsEnvelope, BsBox,
+    BsPersonBoundingBox, BsHouseDoor, BsPower
+} from "react-icons/bs";
+import { FaChevronLeft, FaChevronRight, } from "react-icons/fa";
+import Home from '../Home/Home';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { Link } from 'react-router-dom';
+import AddTraining from './AddTraining';
+import ManageTraining from './ManageTraining';
 
 const Dashboard = () => {
-    const [classes, setClasses] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { user, logOut } = useContext(AuthContext);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [selectedSection, setSelectedSection] = useState('addTraining');
 
-    useEffect(() => {
-        // Simulating fetching class data from an API
-        setTimeout(() => {
-            const sampleClasses = [
-                { id: 1, name: 'Football Training', instructor: 'John Doe', schedule: 'Mon, Wed, Fri', location: 'Field A' },
-                { id: 2, name: 'Basketball Training', instructor: 'Jane Smith', schedule: 'Tue, Thu', location: 'Court B' },
-                { id: 3, name: 'Swimming Lessons', instructor: 'Michael Johnson', schedule: 'Mon, Wed', location: 'Pool' },
-            ];
-            setClasses(sampleClasses);
-            setLoading(false);
-        }, 2000);
-    }, []);
-
-    // Placeholder functions for each functionality
-    const markAttendance = (classId) => {
-        // Implement attendance marking logic
+    const handleToggleSidebar = () => {
+        console.log('Toggle Sidebar');
+        setIsSidebarOpen(!isSidebarOpen);
     };
 
-    const viewPerformance = (classId) => {
-        // Implement performance view logic
+    const handleSectionClick = (section) => {
+        setSelectedSection(section);
     };
 
-    const viewProgress = (classId) => {
-        // Implement progress view logic
+    const handleLogOut = () => {
+
+        logOut()
+            .then()
+            .catch(error => {
+                console.error(error.message)
+            })
+
+    }
+
+    const data = {
+        totalAthletes: 50,
+        upcomingEvents: 5,
+        completedSessions: 30,
     };
 
-    const makePayment = (classId) => {
-        // Implement payment logic
-    };
+    const sidebarItems = [
+        'addTraining',
+        'manageTraining',
+        'enrollment',
+        'inbox',
+        'profile',
+        'settings',
+        'home',
+        'logout',
+    ];
 
-    const viewBilling = () => {
-        // Implement billing view logic
-    };
-
-    const viewAnnouncements = () => {
-        // Implement announcements view logic
+    const sidebarIcons = {
+        addTraining: <BiMessageSquareAdd size={20} />,
+        manageTraining: <CgClipboard size={20} />,
+        enrollment: <BsPersonBoundingBox size={16} />,
+        inbox: <BsEnvelope size={18} />,
+        profile: <BsPerson size={20} />,
+        settings: <BsGear size={18} />,
+        home: <BsHouseDoor size={20} />,
+        logout: <BsPower size={20} />,
     };
 
     return (
-        <div className="container p-6 mx-auto max-w-7xl">
-            <h1 className="mb-8 text-3xl font-bold">Sports Summer Camp Dashboard</h1>
-
-            {/* Class Schedule */}
-            <div className="p-6 mb-8 bg-white rounded-lg shadow">
-                <h2 className="mb-4 text-xl font-bold">Class Schedule</h2>
-                {loading ? (
-                    <p>Loading class schedule...</p>
-                ) : (
-                    <ul className="space-y-4">
-                        {classes.map((classItem) => (
-                            <li key={classItem.id} className="flex items-center justify-between">
-                                <div>
-                                    <h3 className="text-lg font-bold">{classItem.name}</h3>
-                                    <p className="text-gray-500">Instructor: {classItem.instructor}</p>
-                                    <p className="text-gray-500">Schedule: {classItem.schedule}</p>
-                                </div>
-                                <div>
-                                    <p className="text-gray-500">Location: {classItem.location}</p>
-                                    <button
-                                        className="px-4 py-2 mr-2 text-white rounded bg-cyan-500"
-                                        onClick={() => markAttendance(classItem.id)}
-                                    >
-                                        Attendance
-                                    </button>
-                                    <button
-                                        className="px-4 py-2 text-white rounded bg-cyan-500"
-                                        onClick={() => viewPerformance(classItem.id)}
-                                    >
-                                        View Performance
-                                    </button>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                )}
+        <div className="relative flex mx-auto max-w-7xl ">
+            <div className={` ${isSidebarOpen ? 'bg-slate-200' : 'bg-slate-200'}`}>
+                <button
+                    className="top-0"
+                    onClick={handleToggleSidebar}
+                    aria-label="Toggle Sidebar"
+                >
+                    {isSidebarOpen ? <FaChevronLeft className='w-6 h-6 my-3 text-cyan-900' /> : <FaChevronRight className='w-6 h-6 my-3 text-cyan-900' />}
+                </button>
             </div>
 
-            {/* Attendance */}
-            <div className="p-6 mb-8 bg-white rounded-lg shadow">
-                <h2 className="mb-4 text-xl font-bold">Attendance</h2>
-                {/* Display attendance information */}
-            </div>
+            {/* Sidebar */}
+            {isSidebarOpen && (
+                <div className="w-1/2 p-3 sm:w-1/3 md:w-1/4 bg-slate-200">
+                    {user && (
+                        <div className="user-info">
+                            <div className='flex items-center mb-5'>
+                                <img
+                                    src={user.photoURL}
+                                    alt="User Photo"
+                                    className="w-8 h-8 mr-2 rounded-full sm:w-10 sm:h-10 lg:w-12 lg:h-12"
+                                />
+                                <span className="text-sm font-semibold uppercase sm:text-md md:text-lg">{user.displayName}</span>
+                            </div>
+                        </div>
+                    )}
+                    {sidebarItems.map((item) => (
+                        <div
+                            key={item}
+                            className={`p-1 mb-2 sm:py-2 sm:px-2 sm:mb-4 rounded cursor-pointer ${selectedSection === item
+                                ? 'bg-cyan-500 text-white'
+                                : 'hover:bg-slate-300'
+                                }`}
+                            onClick={() => handleSectionClick(item)}
+                        >
+                            <div className="flex items-center">
+                                {sidebarIcons[item]} {/* Display the corresponding icon */}
+                                <span className="ml-2 text-sm font-semibold md:text-md text-slate-700 ">
+                                    {item === 'addTraining' ? 'Add Training' :
+                                        item === 'manageTraining' ? 'Manage Training' :
+                                            item === 'enrollment' ? 'Enrollment' :
+                                                item === 'inbox' ? 'Inbox' :
+                                                    item === 'profile' ? 'Profile' :
+                                                        item === 'settings' ? 'Settings' :
+                                                            item === 'home' ? (
 
-            {/* Performance */}
-            <div className="p-6 mb-8 bg-white rounded-lg shadow">
-                <h2 className="mb-4 text-xl font-bold">Performance</h2>
-                {/* Display performance information */}
-            </div>
+                                                                <Link to="/" className="text-sm font-semibold md:text-md text-slate-700">
+                                                                    Go to Home
+                                                                </Link>
+                                                            ) :
+                                                                item === 'logout' ? (
+                                                                    <Link to="/login" onClick={handleLogOut} className="text-sm font-semibold md:text-md text-slate-700">
+                                                                        Logout
+                                                                    </Link>
+                                                                ) : item.charAt(0).toUpperCase() + item.slice(1)}
+                                </span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
 
-            {/* Progress */}
-            <div className="p-6 mb-8 bg-white rounded-lg shadow">
-                <h2 className="mb-4 text-xl font-bold">Progress</h2>
-                {/* Display progress information */}
-            </div>
+            {/* Main Content */}
+            <div className="flex-1 ">
+                <div>
+                    {/* Your content based on the selected section */}
+                    {selectedSection === 'addTraining' && (
+                        <>
+                            <AddTraining></AddTraining>
+                        </>
+                    )}
+                    {selectedSection === 'manageTraining' && (
+                        <>
+                            <ManageTraining></ManageTraining>
+                        </>
+                    )}
+                    {selectedSection === 'enrollment' && (
+                        <h2>Enrollment: Handle enrollment details and forms here</h2>
+                    )}
+                    {selectedSection === 'inbox' && <h2>Inbox: Display messages and notifications here</h2>}
+                    {selectedSection === 'profile' && (
+                        <h2>Profile: Show user profile information and settings</h2>
+                    )}
+                    {selectedSection === 'settings' && (
+                        <h2>Settings: Implement user settings and preferences here</h2>
+                    )}
+                    {selectedSection === 'home' &&
+                        (
+                            <>
+                                <Link to="/">
+                                    <button className="px-3 py-2 m-3 font-semibold text-white rounded-full bg-cyan-500">Go to home</button>
+                                </Link>
+                            </>
 
-            {/* Payment */}
-            <div className="p-6 mb-8 bg-white rounded-lg shadow">
-                <h2 className="mb-4 text-xl font-bold">Payment</h2>
-                {/* Display payment information */}
-            </div>
+                        )}
+                    {selectedSection === 'logout' && (
+                        <>
+                            {/* <Link to="/">
+                                <button onClick={handleLogOut} className="px-3 py-2 font-semibold text-white rounded-full bg-cyan-500">Log out</button>
+                            </Link> */}
 
-            {/* Billing */}
-            <div className="p-6 mb-8 bg-white rounded-lg shadow">
-                <h2 className="mb-4 text-xl font-bold">Billing</h2>
-                {/* Display billing information */}
-            </div>
 
-            {/* Announcements */}
-            <div className="p-6 mb-8 bg-white rounded-lg shadow">
-                <h2 className="mb-4 text-xl font-bold">Announcements</h2>
-                {/* Display announcements */}
+                        </>
+
+                    )}
+
+                </div>
             </div>
         </div>
     );
 };
 
 export default Dashboard;
+
+
