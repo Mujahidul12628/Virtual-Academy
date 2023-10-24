@@ -17,7 +17,7 @@ const Search = () => {
                 value={name}
                 placeholder='Search by name'
                 onChange={(e) => setName(e.target.value)}
-                className='p-1 rounded-l-full sm:p-2 sm:pl-3 '
+                className='w-2/3 p-1 rounded-l-full sm:w-full sm:p-2 sm:pl-3 '
             />
             <select
                 id="category"
