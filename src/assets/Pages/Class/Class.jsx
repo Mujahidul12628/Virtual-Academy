@@ -1,4 +1,7 @@
-/* eslint-disable react/jsx-no-undef */
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { FaHeart, FaShare, FaAngleDown } from 'react-icons/fa';
 import { FiShare2 } from "react-icons/fi";
@@ -48,7 +51,6 @@ const Class = () => {
 
     return (
         <div>
-            <h1 className='my-10 text-2xl font-semibold text-center text-cyan-600'>Blog Item</h1>
             <div className="grid grid-cols-1 gap-4 mx-auto my-4 sm:grid-cols-2 lg:grid-cols-3 ">
                 {classData.map((classItem) => (
                     <div key={classItem.id} className="overflow-hidden bg-white rounded-md shadow-md ">
@@ -123,3 +125,4 @@ const Class = () => {
 };
 
 export default Class;
+

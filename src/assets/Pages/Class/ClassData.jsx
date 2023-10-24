@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
+import { GrLinkNext } from "react-icons/gr";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 const ClassData = () => {
     const [courses, setCourses] = useState([]);
@@ -10,6 +14,7 @@ const ClassData = () => {
     const [filterInstructor, setFilterInstructor] = useState("");
     const [loading, setLoading] = useState(true);
     const [selectedValue, setSelectedValue] = useState("");
+
 
     useEffect(() => {
         fetch("http://localhost:5700/campData")
@@ -107,9 +112,29 @@ const ClassData = () => {
                             displayCourses.map((course) => (
                                 <div key={course.id} className="p-4 my-5 rounded bg-cyan-50 shadowAlll">
                                     <img className='rounded' src={course.classImg} alt={course.className} />
-                                    <h3 className="my-2 text-lg font-semibold">{course.className}</h3>
-                                    <p className="my-2 text-gray-600">Instructor Name: {course.instructorName}</p>
-                                    {/* Other course details go here */}
+                                    <div className="flex items-center justify-between mt-3 ">
+                                        <h2 className="text-xl font-semibold text-cyan-500">{course.className}</h2>
+                                        <div className='flex item-center text-amber-400'>
+                                            <AiFillStar size={17} />
+                                            <AiFillStar size={17} />
+                                            <AiFillStar size={17} />
+                                            <AiFillStar size={17} />
+                                            <AiFillStar size={17} />
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center justify-between mt-3 ">
+                                        <h2 className="text-xl font-semibold text-cyan-500">${course.price}</h2>
+
+                                        <Link to="/class">
+                                            <button className="flex items-center px-2 py-1 text-white rounded-md justify-evenly bg-cyan-500">
+                                                <span>Explore</span>
+                                                <BsArrowRightCircle size={20} className="ml-2 font-semibold text-white"></BsArrowRightCircle>
+                                            </button>
+                                        </Link>
+
+
+                                    </div>
+
                                 </div>
                             ))
                         )}
@@ -121,6 +146,7 @@ const ClassData = () => {
                         >
                             {displayCourses.length > 6 ? <FaChevronUp /> : <FaChevronDown />}
                         </button>
+
                     </div>
                 </>
             )}
