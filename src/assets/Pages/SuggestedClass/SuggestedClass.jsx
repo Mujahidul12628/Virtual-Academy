@@ -9,7 +9,7 @@
 //         const fetchData = async () => {
 //             try {
 //                 // Replace this URL with your API endpoint
-//                 const response = await fetch('http://localhost:5700/campData');
+//                 const response = await fetch('https://virtual-academy-server.vercel.app/campData');
 //                 const data = await response.json();
 //                 setImages(data); // Assuming the API returns an array of image sources
 //             } catch (error) {
@@ -50,7 +50,7 @@ const SuggestedClass = () => {
         const fetchData = async () => {
             try {
                 // Replace this URL with your API endpoint
-                const response = await fetch('http://localhost:5700/campData');
+                const response = await fetch('https://virtual-academy-server.vercel.app/campData');
                 const data = await response.json();
                 setImages(data); // Assuming the API returns an array of image sources
             } catch (error) {

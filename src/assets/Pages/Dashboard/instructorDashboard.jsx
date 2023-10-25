@@ -7,7 +7,7 @@ const InstructorDashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5700/campData');
+                const response = await fetch('https://virtual-academy-server.vercel.app/campData');
                 const data = await response.json();
 
                 // Assuming the API response structure matches your data

@@ -11,7 +11,7 @@ const ManageTraining = () => {
     const [showAll, setShowAll] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5700/campData')
+        fetch('https://virtual-academy-server.vercel.app/campData')
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error('Error fetching data:', error));

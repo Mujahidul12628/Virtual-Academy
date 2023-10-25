@@ -28,7 +28,7 @@ const ClassDetails = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5700/campData/${id}`)
+        fetch(`https://virtual-academy-server.vercel.app/campData/${id}`)
             .then((res) => res.json())
             .then((data) => setClassData(data));
     }, [id]);

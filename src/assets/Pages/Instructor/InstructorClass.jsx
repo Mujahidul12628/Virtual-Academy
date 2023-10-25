@@ -11,7 +11,7 @@
 //         // Fetch data from the backend API
 //         const fetchData = async () => {
 //             try {
-//                 const response = await fetch('http://localhost:5700/campData');
+//                 const response = await fetch('https://virtual-academy-server.vercel.app/campData');
 //                 const result = await response.json();
 //                 setData(result); // Assuming the data is an array of objects
 //             } catch (error) {

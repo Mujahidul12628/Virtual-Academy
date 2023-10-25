@@ -19,7 +19,7 @@ const Class = () => {
     const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5700/campData')
+        fetch('https://virtual-academy-server.vercel.app/campData')
             .then((response) => response.json())
             .then((data) => {
                 console.log('Data from backend:', data); // Log the data here

@@ -11,7 +11,7 @@ const Instructor = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5700/campData')
+        fetch('https://virtual-academy-server.vercel.app/campData')
             .then((response) => response.json())
             .then((data) => {
                 setInstructors(data);
@@ -123,7 +123,7 @@ export default Instructor;
 //     const [loading, setLoading] = useState(true);
 
 //     useEffect(() => {
-//         fetch('http://localhost:5700/campData')
+//         fetch('https://virtual-academy-server.vercel.app/campData')
 //             .then((response) => response.json())
 //             .then((data) => {
 //                 setInstructors(data);
