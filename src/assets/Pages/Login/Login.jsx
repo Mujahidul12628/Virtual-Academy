@@ -52,18 +52,18 @@
 //     };
 
 //     return (
-//         <div className="hero min-h-screen  rounded-md">
-//             <div className="hero-content flex-col min-w-full rounded-md">
+//         <div className="min-h-screen rounded-md hero">
+//             <div className="flex-col min-w-full rounded-md hero-content">
 //                 <div className="text-center lg:text-left">
-//                     <h1 className="text-3xl font-bold text-green-600">Login</h1>
+//                     <h1 className="text-3xl font-bold text-cyan-600">Login</h1>
 //                 </div>
-//                 <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
+//                 <form onSubmit={handleLogin} className="flex-shrink-0 w-full max-w-sm shadow-2xl card">
 //                     <div className="card-body box-shadow-carousel ">
 //                         <div className="form-control">
 //                             <label className="label">
 //                                 <span className="label-text">Email</span>
 //                             </label>
-//                             <input type="email" name="email" placeholder="email" className="input input-bordered border border-green-400" />
+//                             <input type="email" name="email" placeholder="email" className="border input input-bordered border-cyan-400" />
 //                         </div>
 //                         <div className="form-control">
 //                             <label className="label">
@@ -75,29 +75,29 @@
 //                                     type={showPassword ? 'text' : 'password'}
 //                                     name="password"
 //                                     placeholder="password"
-//                                     className="input input-bordered w-full border border-green-400"
+//                                     className="w-full border input input-bordered border-cyan-400"
 //                                 />
-//                                 <span className="absolute inset-y-0 pr-3 right-0 flex items-center cursor-pointer" onClick={togglePasswordVisibility}>
+//                                 <span className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={togglePasswordVisibility}>
 //                                     {showPassword ? <RiEyeFill /> : <RiEyeOffFill />}
 //                                 </span>
 //                             </div>
 
 //                             <label className="label">
-//                                 <a href="#" className="label-text-alt link link-hover p-1 text-sky-600 font-semibold">Forgot password?</a>
+//                                 <a href="#" className="p-1 font-semibold label-text-alt link link-hover text-sky-600">Forgot password?</a>
 //                             </label>
 //                         </div>
 //                         <div className="form-control">
-//                             <button className="font-semibold details py-2 md:py-2 rounded-md text-white border-2 border-green-400">Login</button>
+//                             <button className="py-2 font-semibold text-white border-2 rounded-md details md:py-2 border-cyan-400">Login</button>
 //                         </div>
 //                         <div className='mx-auto mt-3'><span>Haven not any account yet? </span><Link to="/register" className='text-blue-500'>Register</Link></div>
-//                         <div className="form-control mt-6">
-//                             <button onClick={handleGoogleSignIn} className="bg-white border-2  py-1 rounded-md border-green-400 ">
-//                                 <img className=' rounded-md w-1/12 mx-auto' src={google} alt="Photo 4" />
+//                         <div className="mt-6 form-control">
+//                             <button onClick={handleGoogleSignIn} className="py-1 bg-white border-2 rounded-md border-cyan-400 ">
+//                                 <img className='w-1/12 mx-auto rounded-md ' src={google} alt="Photo 4" />
 //                             </button>
 //                         </div>
-//                         {/* <div className="form-control mt-1">
-//                             <button onClick={handleGoogleSignIn} className="bg-white border-2  py-1 rounded-md border-blue-400 ">
-//                                 <img className=' rounded-md w-1/12 mx-auto' src={fb1} alt="Photo 4" />
+//                         {/* <div className="mt-1 form-control">
+//                             <button onClick={handleGoogleSignIn} className="py-1 bg-white border-2 border-blue-400 rounded-md ">
+//                                 <img className='w-1/12 mx-auto rounded-md ' src={fb1} alt="Photo 4" />
 //                             </button>
 //                         </div> */}
 //                     </div>
@@ -175,18 +175,18 @@
 // //     };
 
 // //     return (
-// //         <div className="hero min-h-screen  rounded-md">
-// //             <div className="hero-content flex-col min-w-full rounded-md">
+// //         <div className="min-h-screen rounded-md hero">
+// //             <div className="flex-col min-w-full rounded-md hero-content">
 // //                 <div className="text-center lg:text-left">
-// //                     <h1 className="text-3xl font-bold text-green-600">Login</h1>
+// //                     <h1 className="text-3xl font-bold text-cyan-600">Login</h1>
 // //                 </div>
-// //                 <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
+// //                 <form onSubmit={handleLogin} className="flex-shrink-0 w-full max-w-sm shadow-2xl card">
 // //                     <div className="card-body box-shadow-carousel ">
 // //                         <div className="form-control">
 // //                             <label className="label">
 // //                                 <span className="label-text">Email</span>
 // //                             </label>
-// //                             <input type="email" name="email" placeholder="email" className="input input-bordered border border-green-400" />
+// //                             <input type="email" name="email" placeholder="email" className="border input input-bordered border-cyan-400" />
 // //                         </div>
 // //                         <div className="form-control">
 // //                             <label className="label">
@@ -198,29 +198,29 @@
 // //                                     type={showPassword ? 'text' : 'password'}
 // //                                     name="password"
 // //                                     placeholder="password"
-// //                                     className="input input-bordered w-full border border-green-400"
+// //                                     className="w-full border input input-bordered border-cyan-400"
 // //                                 />
-// //                                 <span className="absolute inset-y-0 pr-3 right-0 flex items-center cursor-pointer" onClick={togglePasswordVisibility}>
+// //                                 <span className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={togglePasswordVisibility}>
 // //                                     {showPassword ? <RiEyeFill /> : <RiEyeOffFill />}
 // //                                 </span>
 // //                             </div>
 
 // //                             <label className="label">
-// //                                 <a href="#" className="label-text-alt link link-hover p-1 text-sky-600 font-semibold">Forgot password?</a>
+// //                                 <a href="#" className="p-1 font-semibold label-text-alt link link-hover text-sky-600">Forgot password?</a>
 // //                             </label>
 // //                         </div>
 // //                         <div className="form-control">
-// //                             <button className="font-semibold details py-2 md:py-2 rounded-md border-2 border-green-400 text-red-500">Login</button>
+// //                             <button className="py-2 font-semibold text-red-500 border-2 rounded-md details md:py-2 border-cyan-400">Login</button>
 // //                         </div>
 // //                         <div className='mx-auto mt-3'><span>Haven not any account yet? </span><Link to="/register" className='text-blue-500'>Register</Link></div>
-// //                         <div className="form-control mt-6">
-// //                             <button onClick={handleGoogleSignIn} className="bg-white border-2  py-1 rounded-md border-green-400 ">
-// //                                 <img className=' rounded-md w-1/12 mx-auto' src={google} alt="Photo 4" />
+// //                         <div className="mt-6 form-control">
+// //                             <button onClick={handleGoogleSignIn} className="py-1 bg-white border-2 rounded-md border-cyan-400 ">
+// //                                 <img className='w-1/12 mx-auto rounded-md ' src={google} alt="Photo 4" />
 // //                             </button>
 // //                         </div>
-// //                         <div className="form-control mt-1">
-// //                             <button onClick={handleGoogleSignIn} className="bg-white border-2  py-1 rounded-md border-blue-400 ">
-// //                                 {/* <img className=' rounded-md w-1/12 mx-auto' src={fb1} alt="Photo 4" /> */}
+// //                         <div className="mt-1 form-control">
+// //                             <button onClick={handleGoogleSignIn} className="py-1 bg-white border-2 border-blue-400 rounded-md ">
+// //                                 {/* <img className='w-1/12 mx-auto rounded-md ' src={fb1} alt="Photo 4" /> */}
 // //                                 FB
 // //                             </button>
 // //                         </div>
@@ -283,18 +283,18 @@ const Login = () => {
     };
 
     return (
-        <div className="hero min-h-screen  rounded-md">
-            <div className="hero-content flex-col min-w-full rounded-md">
+        <div className="min-h-screen rounded-md hero">
+            <div className="flex-col min-w-full rounded-md hero-content">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-3xl font-bold text-green-600">Login</h1>
+                    <h1 className="text-3xl font-bold text-cyan-600">Login</h1>
                 </div>
-                <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
+                <form onSubmit={handleLogin} className="flex-shrink-0 w-full max-w-sm shadow-2xl card">
                     <div className="card-body box-shadow-carousel ">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered border border-green-400" />
+                            <input type="email" name="email" placeholder="email" className="border input input-bordered border-cyan-400" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -306,29 +306,29 @@ const Login = () => {
                                     type={showPassword ? 'text' : 'password'}
                                     name="password"
                                     placeholder="password"
-                                    className="input input-bordered w-full border border-green-400"
+                                    className="w-full border input input-bordered border-cyan-400"
                                 />
-                                <span className="absolute inset-y-0 pr-3 right-0 flex items-center cursor-pointer" onClick={togglePasswordVisibility}>
+                                <span className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={togglePasswordVisibility}>
                                     {showPassword ? <RiEyeFill /> : <RiEyeOffFill />}
                                 </span>
                             </div>
 
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover p-1 text-sky-600 font-semibold">Forgot password?</a>
+                                <a href="#" className="p-1 font-semibold label-text-alt link link-hover text-sky-600">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control">
-                            <button className="font-semibold details py-2 md:py-2 rounded-md text-white border-2 border-green-400">Login</button>
+                            <button className="py-2 text-lg font-semibold text-white border-2 border-white rounded-md details bg-cyan-500">Login</button>
                         </div>
                         <div className='mx-auto mt-3'><span>Haven't any account yet? </span><Link to="/register" className='text-blue-500'>Register</Link></div>
-                        <div className="form-control mt-6">
-                            <button onClick={handleGoogleSignIn} className="bg-white border-2  py-1 rounded-md border-green-400 ">
-                                <img className=' rounded-md w-1/12 mx-auto' src={google} alt="Photo 4" />
+                        <div className="mt-6 form-control">
+                            <button onClick={handleGoogleSignIn} className="py-1 bg-white border-2 rounded-md border-cyan-500 ">
+                                <img className='w-3/12 mx-auto rounded-md ' src={google} alt="Photo 4" />
                             </button>
                         </div>
-                        {/* <div className="form-control mt-1">
-                            <button onClick={handleGoogleSignIn} className="bg-white border-2  py-1 rounded-md border-blue-400 ">
-                                <img className=' rounded-md w-1/12 mx-auto' src={fb1} alt="Photo 4" />
+                        {/* <div className="mt-1 form-control">
+                            <button onClick={handleGoogleSignIn} className="py-1 bg-white border-2 border-blue-400 rounded-md ">
+                                <img className='w-1/12 mx-auto rounded-md ' src={fb1} alt="Photo 4" />
                             </button>
                         </div> */}
                     </div>

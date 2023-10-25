@@ -3,14 +3,13 @@ a.active {
 }
 
 .menu a:hover {
-    background-color: #65C3C8;
+    background-color: #0b4b4f;
     color: white;
+    border-bottom: 2px solid white;
 }
 
 .menu a {
-
     border-radius: 5px !important;
-
 }
 
 .shadowAll {

@@ -123,12 +123,12 @@ const ClassData = () => {
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-between mt-3 ">
-                                        <h2 className="text-xl font-semibold text-cyan-500">${course.price}</h2>
+                                        <h2 className="text-2xl font-semibold text-cyan-500">${course.price}</h2>
 
                                         <Link to="/class">
                                             <button className="flex items-center px-2 py-1 text-white rounded-md justify-evenly bg-cyan-500">
                                                 <span>Explore</span>
-                                                <BsArrowRightCircle size={20} className="ml-2 font-semibold text-white"></BsArrowRightCircle>
+                                                <BsArrowRightCircle size={20} className="ml-2 font-bold text-white"></BsArrowRightCircle>
                                             </button>
                                         </Link>
 
