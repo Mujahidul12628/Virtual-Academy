@@ -11,8 +11,6 @@ const Home = () => {
             <Banner></Banner>
             <ClassData></ClassData>
             <Instructor></Instructor>
-
-
         </div>
     );
 };
