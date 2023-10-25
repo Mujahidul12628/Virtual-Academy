@@ -17,6 +17,7 @@ import ClassDetails from "../Pages/Class/ClassDetails";
 import Instructor from "../Pages/Instructor/Instructor";
 import InstructorDetails from "../Pages/Instructor/InstructorDetails";
 import Blog from "../Pages/Blog/Blog";
+import Payment from "../Pages/Payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -44,8 +45,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/class/:id',
-                element: <ClassDetails></ClassDetails>
+                element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>
             },
+
 
 
             {
@@ -54,7 +56,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/instructor/:id',
-                element: <InstructorDetails></InstructorDetails>
+                element: <PrivateRoute><InstructorDetails></InstructorDetails></PrivateRoute>
+            },
+            {
+                path: '/payment',
+                element: <PrivateRoute><Payment></Payment></PrivateRoute>
             },
 
             {

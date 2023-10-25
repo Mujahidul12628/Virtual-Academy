@@ -318,12 +318,12 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control">
-                            <button className="py-2 text-lg font-semibold text-white border-2 border-white rounded-md details bg-cyan-500">Login</button>
+                            <button className="py-1 text-lg font-semibold text-white border-2 rounded-md details border-cyan-500 bg-cyan-500">Login</button>
                         </div>
                         <div className='mx-auto mt-3'><span>Haven't any account yet? </span><Link to="/register" className='text-blue-500'>Register</Link></div>
                         <div className="mt-6 form-control">
-                            <button onClick={handleGoogleSignIn} className="py-1 bg-white border-2 rounded-md border-cyan-500 ">
-                                <img className='w-3/12 mx-auto rounded-md ' src={google} alt="Photo 4" />
+                            <button onClick={handleGoogleSignIn} className="py-2 bg-white border-2 rounded-md border-cyan-500 ">
+                                <img className='w-2/12 mx-auto rounded-md ' src={google} alt="Photo 4" />
                             </button>
                         </div>
                         {/* <div className="mt-1 form-control">

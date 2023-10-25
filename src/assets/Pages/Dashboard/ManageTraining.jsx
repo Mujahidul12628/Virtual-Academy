@@ -1,6 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -40,7 +41,9 @@ const ManageTraining = () => {
         const newData = [...data];
         newData.splice(index, 1);
         setData(newData);
-        toast.error("Item Deleted", {
+
+        // Show toast notification for successful deletion
+        toast.error('Item Deleted', {
             autoClose: 1000,
         });
     };
@@ -53,13 +56,13 @@ const ManageTraining = () => {
                     <table className="w-full mt-8 border border-collapse">
                         <thead>
                             <tr>
-                                <th className="py-3 sm:table-cell bg-slate-200">Picture</th>
-                                <th className="py-3 sm:table-cell bg-slate-200">Name</th>
-                                <th className="py-3 sm:table-cell bg-slate-200">Instructor</th>
-                                <th className="py-3 sm:table-cell bg-slate-200">Price</th>
-                                <th className="py-3 sm:table-cell bg-slate-200">Category</th>
-                                <th className="py-3 sm:table-cell bg-slate-200">Ratings</th>
-                                <th className="py-3 sm:table-cell bg-slate-200">Payment</th>
+                                <th className="p-1 py-3 sm:table-cell bg-stone-200">Picture</th>
+                                <th className="py-3 sm:table-cell bg-stone-200">Name</th>
+                                <th className="py-3 sm:table-cell bg-stone-200">Instructor</th>
+                                <th className="py-3 sm:table-cell bg-stone-200">Price</th>
+                                <th className="py-3 sm:table-cell bg-stone-200">Category</th>
+                                <th className="py-3 sm:table-cell bg-stone-200">Ratings</th>
+                                <th className="py-3 sm:table-cell bg-stone-200">Payment</th>
                                 <th className="py-3 sm:table-cell bg-slate-200">Remove</th>
                             </tr>
                         </thead>
@@ -75,10 +78,13 @@ const ManageTraining = () => {
                                     <td className="border-b min-w-[100px] text-center">{item.category}</td>
                                     <td className="border-b min-w-[100px] text-center">{item.rating}</td>
                                     <td className="border-b min-w-[100px] text-center relative ">
-                                        <button className='p-1 px-3 text-white bg-green-500 rounded-md' onClick={() => handleUpdate(index)}>Payment</button>
+                                        <Link to="/payment">
+
+                                            <button className='p-1 px-3 text-sm text-white bg-green-500 rounded-md'>Payment</button>
+                                        </Link>
                                     </td>
                                     <td className="border-b min-w-[100px] text-center relative ">
-                                        <button className='p-1 text-white bg-red-500 rounded-md ' onClick={() => handleDelete(index)}>Remove Courses</button>
+                                        <button className='p-1 text-sm text-white bg-red-500 rounded-md ' onClick={() => handleDelete(index)}>Remove Courses</button>
                                     </td>
                                 </tr>
                             ))}

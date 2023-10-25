@@ -195,7 +195,7 @@ const ClassDetails = () => {
                                     <h1>Course Fee:</h1>
                                     <h2 className='text-lg text-center '>${classData?.price}</h2>
                                 </div>
-                                <Link to={`/`}>
+                                <Link to={`/payment`}>
                                     <button className='flex items-center justify-center w-full py-1 mt-5 font-semibold text-white rounded-md bg-cyan-500'>
                                         <span >Enroll Now</span> <RxEnter className='pl-3' size={28}></RxEnter>
                                     </button>
